@@ -9,9 +9,19 @@ public class User {
     private String user;
     private String pass;
     private String displayName;
-    private String timestamp;
     private String type;
     private String description;
+
+    public User() {}
+
+    public User(int id, String user, String pass, String displayName, String type, String description) {
+        this.id = id;
+        this.user = user;
+        this.pass = pass;
+        this.displayName = displayName;
+        this.type = type;
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -43,14 +53,6 @@ public class User {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
     }
 
     public String getType() {
