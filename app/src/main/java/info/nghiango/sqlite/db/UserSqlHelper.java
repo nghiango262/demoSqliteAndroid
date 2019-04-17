@@ -12,18 +12,14 @@ import java.util.List;
 import info.nghiango.sqlite.db.model.Note;
 import info.nghiango.sqlite.db.model.User;
 
+import static info.nghiango.sqlite.db.DbUtils.DATABASE_NAME;
+import static info.nghiango.sqlite.db.DbUtils.DATABASE_VERSION;
+
 /**
  * Created by ravi on 15/03/18.
  */
 
 public class UserSqlHelper extends SQLiteOpenHelper {
-
-    // Database Version
-    private static final int DATABASE_VERSION = 1;
-
-    // Database Name
-    private static final String DATABASE_NAME = "user_db";
-
 
     public UserSqlHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,7 +28,6 @@ public class UserSqlHelper extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         // create notes table
         db.execSQL(DbUtils.USER_CREATE_TABLE);
     }
@@ -105,7 +100,7 @@ public class UserSqlHelper extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + DbUtils.USER_TABLE_NAME + " ORDER BY " +
                 DbUtils.USER_COLUMN_ID + " DESC";
 
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list

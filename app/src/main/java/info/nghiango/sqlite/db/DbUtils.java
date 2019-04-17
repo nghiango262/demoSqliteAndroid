@@ -1,6 +1,14 @@
 package info.nghiango.sqlite.db;
 
 public class DbUtils {
+
+    // Database Version
+    public static final int DATABASE_VERSION = 1;
+
+    // Database Name
+    public static final String DATABASE_NAME = "test_db";
+
+
     /**
      * USER TABLE
      */
@@ -32,7 +40,7 @@ public class DbUtils {
                     + USER_COLUMN_PASS + " TEXT,"
                     + USER_COLUMN_DISPLAY_NAME + " TEXT,"
                     + USER_COLUMN_TYPE + " TEXT,"
-                    + USER_COLUMN_DESCRIPTION + " TEXT,"
+                    + USER_COLUMN_DESCRIPTION + " TEXT"
                     + ")";
 
 

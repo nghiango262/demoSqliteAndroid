@@ -11,18 +11,14 @@ import java.util.List;
 
 import info.nghiango.sqlite.db.model.Note;
 
+import static info.nghiango.sqlite.db.DbUtils.DATABASE_NAME;
+import static info.nghiango.sqlite.db.DbUtils.DATABASE_VERSION;
+
 /**
  * Created by ravi on 15/03/18.
  */
 
 public class NoteSqlHelper extends SQLiteOpenHelper {
-
-    // Database Version
-    private static final int DATABASE_VERSION = 1;
-
-    // Database Name
-    private static final String DATABASE_NAME = "notes_db";
-
 
     public NoteSqlHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
